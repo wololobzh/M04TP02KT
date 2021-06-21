@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="question_reponse"
+            type="fr.eni.vraioufaux.model.QuestionReponse"
+            />
+
+        <variable
+            name="points"
+            type="String"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+        <TextView
+            android:id="@+id/tv_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{points}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="50dp"
+            />
+        <TextView
+            android:id="@+id/tv_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{question_reponse.question}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_points"
+            android:layout_marginTop="50dp"
+            />
+        <Button
+            android:id="@+id/btn_vrai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VRAI"
+            app:layout_constraintTop_toBottomOf="@id/tv_question"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="80dp"
+            />
+        <Button
+            android:id="@+id/btn_faux"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FAUX"
+            app:layout_constraintTop_toBottomOf="@id/tv_question"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="80dp"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
